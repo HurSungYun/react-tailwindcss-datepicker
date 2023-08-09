@@ -92,9 +92,13 @@ import React, { useState } from "react";
 import Datepicker from "react-tailwindcss-datepicker";
 
 const App = () => {
+    const today = new Date();
+    const futureDate = new Date();
+    futureDate.setMonth(11);
+
     const [value, setValue] = useState({
-        startDate: new Date(),
-        endDate: new Date().setMonth(11)
+        startDate: today,
+        endDate: futureDate,
     });
 
     const handleValueChange = newValue => {
